@@ -1,0 +1,17 @@
+<html>
+    <head>
+        {% block header %}
+            <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
+            <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+            <link rel="stylesheet" type="text/css" href="http://reset5.googlecode.com/hg/reset.min.css">
+            <title>{% block title %}{% endblock title %} - pisskidney.com</title>
+            <script src="{{ url_for('static', filename='colored_text.js') }}"></script>
+        {% endblock header %}
+    </head>
+    <body>
+        <div id="container">
+            {% block content %}{% endblock content %}
+        </div>
+        {% block footer %}{% endblock footer %}
+    </body>
+</html>
