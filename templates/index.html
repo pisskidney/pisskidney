@@ -1,19 +1,10 @@
-<html>
-    <head>
-        <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-        <link rel="stylesheet" type="text/css" href="http://reset5.googlecode.com/hg/reset.min.css">
-        <title>pisskidney.com</title>
-        <script src="{{ url_for('static', filename='colored_text.js') }}"></script>
-    </head>
-    <body>
-        <div id="container">
-            <h1 id="title">pisskidney.com</h1>
-            <div id="buttons">
-                <a href="clrs.html">CLRS solutions</a> 
-                <a href="clrs.html">About some random OOP thingy.</a> 
-                <a href="clrs.html">Bloomfilters made ez.</a> 
-            </div>
-        </div>
-    </body>
-</html>
+{% extends "base.html" %}
+{% block title %}home{% endblock title %}
+{% block content %}
+    <h1 id="title">pisskidney.com</h1>
+    <div id="buttons">
+        <a href="clrs">Introduction to Algorithms (CLRS) solutions</a> 
+        <a href="{{ url_for('static', filename='favicon.ico') }}">hingy.</a> 
+        <a href="clrs.html">Bloomfilters made ez.</a> 
+    </div>
+{% endblock content %}
