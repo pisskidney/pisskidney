@@ -36,7 +36,7 @@ def clrs_ex(c, s, p):
     template_path = os.path.join(template_dir, s + '_' + p + '.html')
     return render_template(template_path, ex=c + '.' + s + '-' + p)
 
-
+#@TODO Add config file.
 if __name__ == '__main__':
-    app.debug = True
+    app.debug = False
     app.run('0.0.0.0')
