@@ -35,3 +35,14 @@
     text-decoration: none;
     font-weight: bold;
 }
+#disqus_thread {
+    width: 600px;
+    padding: 20px;
+    margin: 0px auto;
+}
+#clrs_content {
+    width: 600px;
+    margin: 10px auto;
+    padding: 20px;
+    min-height: 50%;
+}
