@@ -5,13 +5,15 @@
             <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
             <link rel="stylesheet" type="text/css" href="http://reset5.googlecode.com/hg/reset.min.css">
             <title>{% block title %}{% endblock title %} - pisskidney.com</title>
-            <script src="{{ url_for('static', filename='colored_text.js') }}"></script>
         {% endblock header %}
     </head>
     <body>
         <div id="container">
+            <h1 id="title">pisskidney.com</h1>
             {% block content %}{% endblock content %}
         </div>
-        {% block footer %}{% endblock footer %}
+        {% block footer %}
+            <script src="{{ url_for('static', filename='colored_text.js') }}"></script>
+        {% endblock footer %}
     </body>
 </html>

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}{{ ex }} - Introduction to Algorithms solution{% endblock title %}
+{% block footer %}
+    {{ super() }}
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+{% endblock %}

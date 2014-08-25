@@ -34,7 +34,7 @@ def clrs_ex(c, s, p):
     chapter = CLRS_CHAPTER_PREFIX + c
     template_dir = os.path.join(CLRS_DIR, chapter)
     template_path = os.path.join(template_dir, s + '_' + p + '.html')
-    return render_template(template_path)
+    return render_template(template_path, ex=c + '.' + s + '-' + p)
 
 
 if __name__ == '__main__':
