@@ -45,4 +45,18 @@
     margin: 10px auto;
     padding: 20px;
     min-height: 50%;
+    font-size: 18px;
+}
+#clrs_content .statement {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+    border-left: solid 5px #ccc;
+    padding-left: 10px;
+
+
+}
+#clrs_content .solution {
+
+
 }
