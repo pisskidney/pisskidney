@@ -1,13 +1,15 @@
 #title {
-    margin-top: 30px;
     font-size: 32px;
     font-family: "Courier New";
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid #000;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
 }
 #container {
-    padding: 0px 20px 20px 20px;
+    padding: 20px 20px 20px 20px;
 }
 #problems-container {
     width: 640px;
