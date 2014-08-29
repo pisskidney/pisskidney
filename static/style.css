@@ -55,10 +55,13 @@
     margin-bottom: 30px;
     border-left: solid 5px #ccc;
     padding-left: 10px;
-
-
 }
 #clrs_content .solution {
 
 
+
+}
+#clrs_content .solution img {
+    margin: 0px auto;
+    display: block;
 }
