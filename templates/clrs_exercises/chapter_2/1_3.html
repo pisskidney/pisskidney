@@ -1,0 +1,36 @@
+{% extends "clrs_base.html" %}
+{% block clrs_content %}
+<div class="statement">
+<p>Consider the <bold>searching problem</bold>:</p>
+</br>
+<p><b>Input</b>: A sequence of n numbers $ A = \{a_1, a_2, ..., a_n\} $</p>
+</br>
+<p><b>Output</b>: An index $i$ such that $v = A[i]$ or the special value $NIL$
+if $v$ does not appear in $A$.</p>
+</br>
+<p>Write pseudocode for <b>linear search</b>, which scans throught the sequence, 
+looking for $v$. Using a loop variant, prove that your algorithm is correct. Make
+sure your loop invariant fulfills the three necessary properties.</p>
+</div>
+<div class="solution">
+<code><pre>
+SEARCH(A, v)
+for i:= 1 to A.length:
+    if v == A[i]:
+        return i
+    return NIL
+</pre></code>
+<p><b>Loop invariant</b>: The array $A[1, i - 1]$ does not contain the element
+$v$.</p></br>
+<p><b>Initialization: </b>When $i = 1$, the array $A[1, 0]$ is empty,
+therefore it doesn't contain the element $v$.</p></br>
+<p><b>Maintenance</b>: Since the algorithm returns $i$ when it finds $v$ on the
+$i$th index, if the algorithm reaches the $i+1$th iteration, we know that $v \notin A[1, i]$,
+maintaining the loop invariant.</p></br>
+<p><b>Termination</b>: The conditions for termination are: $v = A[i]$ or $i > A.length$.
+The first condition is pretty straight forward. If we terminate on $i > A.length$ it means
+we haven't found $v$ in $A[1, i-1]$. Since $i > A.length$ it means we have searched
+the entire array $A$, so the algorithm is correct.
+</p></br>
+</div>
+{% endblock %}
