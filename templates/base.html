@@ -9,7 +9,7 @@
     </head>
     <body>
         <div id="container">
-            <a id="title" href="http://pisskidney.com/">pisskidney.com</a>
+            <a id="title" href="{{ url_for('index') }}">pisskidney.com</a>
             {% block content %}{% endblock content %}
         </div>
         {% block footer %}
