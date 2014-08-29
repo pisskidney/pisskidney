@@ -1,0 +1,20 @@
+{% extends "clrs_base.html" %}
+{% block clrs_content %}
+<p class="statement">
+Rewrite the INSERTION-SORT procedure to sort into nonincreasing instead of nondecreasing
+order.
+</p>
+<div class="solution">
+<code><pre>
+for j = 2 to A.length
+    key = A[j]
+    i = j - 1
+    while i > 0 and <b>A[i] < key</b>
+        A[i + 1] = A[i]
+        i = i - 1
+    A[i + 1] = key
+</pre>
+</code>
+<p>We just needed to inverse the inequality highlighted above.
+</div>
+{% endblock %}
