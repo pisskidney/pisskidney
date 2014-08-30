@@ -1,0 +1,28 @@
+{% extends "clrs_base.html" %}
+{% block clrs_content %}
+<div class="statement">
+    Consider the problem of adding two n-bit binary integers, stored in two n-element
+    arrays A and B. The sum of the two integers should be stored in binary form in
+    an (n + 1)-element array C. State the problem formally and write pseudocode for
+    adding the two integers.
+</div>
+<div class="solution">
+<p>
+    <b>Input</b>: Two binary representations of integers: </br></br>
+    $A = \{a_1, a_2, ... , a_n\}, a_i \in \{0, 1\}$</br></br>
+    $B = \{b_1, b_2, ... , b_n\}, b_j \in \{0, 1\}$</br></br>
+    We assume the representation to be the most significant bit first.</br></br>
+    <b>Output</b>:
+    $C = \{c_1, c_2, ..., c_n, c_{n+1}\}, c_k \in \{0, 1\}$, such that $C' = A' + B'$.
+    $A', B', C'$ are the integers represented by A, B and C bit sequences.
+</p></br>
+<code><pre>
+carry = 0
+for i := n downto 2 
+    s = A[i - 1] + B[i - 1] + carry
+    C[i] = s mod 2
+    carry = s / 2
+C[1] = carry
+</pre></code>
+</div>
+{% endblock %}
