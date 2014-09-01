@@ -1,0 +1,35 @@
+{% extends "clrs_base.html" %}
+{% block clrs_content %}
+<p class="statement">
+Rewrite the MERGE procedure so that it does not use sentinels, instead stopping
+once either array L or R has had all its elements copied back to A and then copying
+the remainder of the other array back into A.
+</p>
+<div class="solution">
+<pre>
+MERGE(A, p, q, r)
+$n_1$ = q - p + 1
+$n_2$ = r - q
+Let L[1 .. $n_1$] and R[1 .. $n_2$] be the new arrays
+for i := 1 to $n_1$
+    L[i] = A[p + i - 1]
+for j := 1 to $n_2$
+    R[i] = A[q + j]
+i = 1
+j = 1
+for k := p to r
+    if i > $n_1$
+        A[k] = R[j]
+        j = j + 1
+    else if j > $n_2$
+        A[k] = L[i]
+        i = i + 1
+    else if L[i] < R[j]
+        A[k] = L[i]
+        i = i + 1
+    else
+        A[k] = R[j]
+        j = j + 1
+</pre>
+</div>
+{% endblock %}
