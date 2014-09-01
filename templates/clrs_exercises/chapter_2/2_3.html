@@ -1,0 +1,19 @@
+{% extends "clrs_base.html" %}
+{% block clrs_content %}
+<p class="statement">
+Consider linear search again (see Exercise 2.1-3). How many elements of the input
+sequence need to be checked on the average, assuming that the element being
+searched for is equally likely to be any element in the array? How about in the
+worst case? What are the average-case and worst-case running times of linear
+search in $\Theta$-notation? Justify your answers.
+</p>
+<div class="solution">
+<p>Since all elements are equally likely to be the ones being searched for, we need
+$n/2$ comparisons on average.</p>
+<p>The worst case scenario is that the element we are searching for is $A[n]$.
+In that case we need $n$ comparisons exactly.</p>
+<p> Asymptotically, $n$ and ${1\over2}n$ are the same, since only the leading constants
+differ.</p>
+<p>Therefore, the running time is $\Theta(n)$ in both cases.</p>
+</div>
+{% endblock %}
