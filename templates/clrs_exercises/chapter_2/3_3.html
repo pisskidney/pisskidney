@@ -1,0 +1,35 @@
+{% extends "clrs_base.html" %}
+{% block clrs_content %}
+<p class="statement">
+Use mathematical induction to show that when n is an exact power of 2, the solution
+of the recurrence
+$$ T(n) = \left\{ 
+    \begin{array}{l l}
+        2 & \quad \text{if $n$ = 2}\\
+        2T(n/2)+n & \quad \text{if $n = 2^k$, for k > 1}
+    \end{array} \right.
+$$
+is $T(n) = nlgn$
+</p>
+<div class="solution">
+    <p>We need to prove that $T(2^n) = 2^nlg2^n$</p></br>
+    <p><b>Base case</b>: $n = 1$</p>
+    $$\begin{align}T(2^1) & = 2 =\\
+    &= 2^1lg2^1
+    \end{align}$$
+    <p>The statement is true for $n = 1$</p>
+    </br>
+    <p>
+        <b>Inductive step</b>: We assume $T(2^k) = 2^klg2^k$ holds.</br>
+        $$\begin{align}T(2^{k+1}) & = 2*T({2^{k+1}\over 2}) + 2^{k+1} = \\
+        &= 2*T({2^k*2\over 2}) + 2^{k+1} = \\
+        &= 2*T(2^k) + 2^{k+1} = \\
+        &= 2*2^klg2^k + 2^{k+1} = \\
+        &= 2^{k+1}lg2^k + 2^{k+1} = \\
+        &= 2^{k+1}(lg2^k + 1) = \\
+        &= 2^{k+1}(lg2^k + lg2) = \\
+        &= 2^{k+1}lg2^{k+1}
+        \end{align}$$
+    </p>
+</div>
+{% endblock %}
