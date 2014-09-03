@@ -5,13 +5,13 @@
     <p>Making my solutions public, in case someone can benefit from them.</p>
     <p>Each problem has a comments section where you can correct any errors you may find (please).</p>
     <div id="problems-container">
-        {% for chapter in problems.keys() %}
+        {% for chapter in problems.keys()|sort %}
             <h2 class="chapter">Chapter {{ chapter }}</h2>
             <div class="problems">
-            {% for section in problems[chapter] %}
+            {% for section in problems[chapter]|sort %}
                 <div class="section">
                     <span class="section-title">Section {{ section }}</span>
-                    {% for problem in problems[chapter][section] %}
+                    {% for problem in problems[chapter][section]|sort %}
                         <a class="problem" href="{{ url_for('clrs_ex', c=chapter, s=section, p=problem) }}">{{ chapter }}.{{ section }}-{{ problem }}</a>
                     {% endfor %}
                 </div>
