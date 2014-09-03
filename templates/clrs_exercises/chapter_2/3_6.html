@@ -1,0 +1,14 @@
+{% extends "clrs_base.html" %}
+{% block clrs_content %}
+<p class="statement">
+Observe that the <b>while</b> loop of lines 5-7 of the INSERTION-SORT procedure
+in Section 2.1 uses a linear search to scan (backward) through the sorted subarray
+$A[1 .. j - 1]$. Can we use a binary search (see Excercise 2.3-5) instead to improve
+the overall worst-case running time of insertion sort to $\Theta(nlgn)$?
+</p>
+<div class="solution">
+Insertion sort shifts the elements as it searches for the place it needs to insert
+the current element into. Since the shifting part takes $O(n)$ and is required even
+if we use binary search, the worst-case running time would not be affected.
+</div>
+{% endblock %}
