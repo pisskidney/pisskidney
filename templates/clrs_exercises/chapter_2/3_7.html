@@ -1,0 +1,18 @@
+{% extends "clrs_base.html" %}
+{% block clrs_content %}
+<p class="statement">
+Describe a $\Theta(nlgn)$-time algorithm that, given a set $S$ of $n$ integers
+and another integer $x$, determines whether or not there exist two elements in $S$
+whose sum is exactly $x$.
+</p>
+<div class="solution">
+<code><pre>
+SUM-EXISTS(S, x)
+    MERGE-SORT(S, 1, S.length)
+    for i := 1 to S.length - 1
+        if BINARY-SEARCH(S, 1, S.length, x - S[i]) != NIL
+            return True
+    return False
+</pre></code>
+</div>
+{% endblock %}
